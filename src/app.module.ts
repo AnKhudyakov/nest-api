@@ -9,13 +9,13 @@ import { MailerModule } from '@nestjs-modules/mailer';
   imports: [
     UsersModule,
     MongooseModule.forRoot(
-      `mongodb+srv://Duhless:Duhless153@cluster0.ffk9bnw.mongodb.net/payever`,
+      `${process.env.MONGO_URL}`,
     ),
     MailerModule.forRoot({
       transport: 'smtp://localhost:25',
       defaults: {
-        from: '"Andrey" <khandrewv@gmail.com>',
-        to: 'khandrewv@gmail.com',
+        from: `"Andrey" <${process.env.EMAIL}>`,
+        to: `${process.env.EMAIL}`,
       },
     }),
   ],

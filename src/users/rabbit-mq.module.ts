@@ -10,7 +10,7 @@ import { RabbitMQService } from './rabbit-mq.service';
         transport: Transport.RMQ,
         options: {
           urls: [
-            'amqps://smpxcnba:j3s0V6eXeEi30W9vi42JjupdS3RyY-5i@rat.rmq2.cloudamqp.com/smpxcnba',
+            `${process.env.RABBITMQ_URL}`,
           ],
           queue: 'rabbit-mq-nest-js',
         },
